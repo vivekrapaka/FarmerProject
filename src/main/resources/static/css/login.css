@@ -1,0 +1,7 @@
+#login-box {
+  border: 2px solid #17a2b8; /* Bootstrap's 'info' color */
+  border-radius: 10px;
+  padding: 30px;
+  background-color: #ffffff; /* Optional: white background */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: soft shadow */
+}
