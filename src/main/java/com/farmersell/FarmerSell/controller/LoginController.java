@@ -1,16 +1,17 @@
 package com.farmersell.FarmerSell.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.farmersell.FarmerSell.entity.User;
 import com.farmersell.FarmerSell.repository.UserRepository;
+import com.farmersell.FarmerSell.service.UserService;
+import com.farmersell.FarmerSell.vo.LoginVo;
 import com.farmersell.FarmerSell.vo.UserVo;
 
 @Controller
@@ -21,6 +22,9 @@ public class LoginController {
 	
 	@Autowired
 	private PasswordEncoder passwordEncoder;
+	
+	@Autowired
+	UserService userService;
 	
 	@PostMapping("/register")
 	public ResponseEntity<String> registration(@RequestBody UserVo uservo){
@@ -47,6 +51,22 @@ public class LoginController {
 		catch (Exception e) {
 			System.out.println("printing the exception"+ e);
 			return ResponseEntity.ok("registion failed");
+		}
+	}
+	@PostMapping("/login")
+	public ResponseEntity<String> loginValidate(@RequestBody LoginVo loginVo){
+		System.out.println("calling the /login api");
+		try {
+		boolean isvalid = userService.validateLogin(loginVo.getUserName(), loginVo.getPassword());
+		if(isvalid) {
+			return ResponseEntity.ok("login successfully");
+			
+		}else {
+			return ResponseEntity.ok("invalid crediationals");
+		}
+		}
+		catch(Exception e) {
+			return ResponseEntity.ok("Something went wrong");
 		}
 	}
 }
