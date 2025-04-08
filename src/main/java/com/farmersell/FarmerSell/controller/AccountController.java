@@ -17,4 +17,5 @@ public class AccountController {
 	public String registrationPage(Model model) {
 		return "registration";
 	}
+	
 }
