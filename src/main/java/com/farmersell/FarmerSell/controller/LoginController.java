@@ -35,7 +35,7 @@ public class LoginController {
 		
 		
 		User data = new User();
-		data.setName(uservo.getName());
+		data.setName(uservo.getFirstName());
 		data.setLastName(uservo.getLastName());
 		data.setPassword(passwordEncoder.encode(uservo.getPassword()));
 		data.setUserName(uservo.getUserName());
@@ -45,6 +45,7 @@ public class LoginController {
 		return ResponseEntity.ok("register successfully");
 	}
 		catch (Exception e) {
+			System.out.println("printing the exception"+ e);
 			return ResponseEntity.ok("registion failed");
 		}
 	}

@@ -22,7 +22,9 @@
 	
 
 <section class="bg-light p-3 p-md-4 p-xl-5">
-	<script th:src="@{/js/registration.js}"></script>
+	<script th:src="@{/js/dashboard.js}"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.5.2/bootbox.min.js"></script>
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-12 col-md-9 col-lg-7 col-xl-6 col-xxl-5">
@@ -40,25 +42,25 @@
               <div class="row gy-3 overflow-hidden">
                 <div class="col-12">
                   <div class="form-floating mb-3">
-                    <input type="text" class="form-control" name="firstName" id="firstName" placeholder="First Name" required value="vivek">
+                    <input type="text" class="form-control" name="firstName" id="firstName" placeholder="First Name" required >
                     <label for="firstName" class="form-label">First Name</label>
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-floating mb-3">
-                    <input type="text" class="form-control" name="lastName" id="lastName" placeholder="First Name" required value="kumar">
+                    <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Last Name" required >
                     <label for="lastName" class="form-label">Last Name</label>
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-floating mb-3">
-                    <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" value="vivekkumar.rapaka@gmail.com">
+                    <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" >
                     <label for="email" class="form-label">Email</label>
                   </div>
                 </div>
 				<div class="col-12">
 					<div class="form-floating mb-3">
-						<input type="text" class="form-control" name="UserName" id="username" placeholder="User Name" required value="vivek">
+						<input type="text" class="form-control" name="UserName" id="username" placeholder="User Name" required >
 						<label for="lastName" class="form-label">User Name</label>
 					</div>
 				</div>
@@ -122,7 +124,6 @@
       </div>
     </div>
   </div>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script th:src="@{/js/dashboard.js}"></script>
+
 </body>
 </section>

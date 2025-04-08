@@ -4,8 +4,8 @@ import org.antlr.v4.runtime.misc.NotNull;
 
 public class UserVo {
 	
-	@NotNull
-	private String name;
+	
+	private String firstName;
 	
 	private String lastName;
 	
@@ -15,12 +15,13 @@ public class UserVo {
 	
 	private String password;
 
-	public String getName() {
-		return name;
+
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setFirstname(String firstname) {
+		this.firstName = firstname;
 	}
 
 	public String getLastName() {
