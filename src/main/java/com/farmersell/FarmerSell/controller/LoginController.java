@@ -32,9 +32,10 @@ public class LoginController {
 		try {
 		
 		User userdata = userRepository.findByUserName(uservo.getUserName());
-		
+		System.out.println("get the data or not "+ userdata);
 		if(userdata != null) {
-			ResponseEntity.ok("User Already Register");
+			return ResponseEntity.ok("User Already Register");
+			
 		}
 		
 		
@@ -50,7 +51,7 @@ public class LoginController {
 	}
 		catch (Exception e) {
 			System.out.println("printing the exception"+ e);
-			return ResponseEntity.ok("registion failed");
+			return ResponseEntity.ok("registration failed");
 		}
 	}
 	@PostMapping("/login")
